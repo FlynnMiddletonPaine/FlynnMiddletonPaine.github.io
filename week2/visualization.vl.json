@@ -1,0 +1,31 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "IMF Lending Outstanding ",
+    "subtitle": "Lending data, adjusted per yearly gdp *(2022 is a forecsted value)* giving lending as a percentage of GDP",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/data_IMF_creditOutstanding%20%25.csv"
+  },
+  "height": 300,
+  "width": 500,
+  "mark": {"type": "bar", "color": "#9512b6"},
+  "encoding": {
+    "x": {
+      "field": "Year",
+      "type": "nominal",
+      "axis": {"title": null, "grid": false, "ticks": false, "labelAngle": 45}
+    },
+    "y": {
+      "field": "Totals",
+      "type": "quantitative",
+      "title": "Lending as a percentage of GDP",
+      "axis": {"grid": false}
+    }
+  },
+  "config": {}
+}

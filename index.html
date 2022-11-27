@@ -32,8 +32,20 @@
         <h3>Productivity puzzle</h3>
         <p>My second chart looks at predicted wave height in foot for a week in Brighton</p>
         <div class="chart" id="Chart2"> </div>
+    
+
+    <div class="myWeek2">
+        <h3>week2</h3>
+        <p>This chart shows the total IMF Credit Oustanding from all members for 1984-2022.</p>
+        <div class="chart" id="Chart3"></div>
+
+        <p>This chart looks at the same IMF Credit Outsanding data, but is adjusted and shown as a percntage of world GDP </p>
+        <div class="chart" id="Chart4"> </div>
+        <p>I have adjusted the first chart with the second display showing that actually it would be less risky time to borrow money in 2022 rather than in 1984 as the class estimated in the lecture.</p>
     </div> 
+    
 </body>
+
 
 
 
@@ -41,13 +53,22 @@
     //Define charts:
     var myChart1 = "week1/Homeattendance.json";
     var myChart2 = "week1/BrightonWaves.vl.json";
+    var myChart3 = "week2/IMFlending1.json";
+    var myChart4 = "week2/IMFlending2.json";
+
+
+
 
     // Embed charts:
     vegaEmbed('#Chart1', myChart1);
     vegaEmbed('#Chart2', myChart2);
+    vegaEmbed('#Chart3', myChart3);
+    vegaEmbed('#Chart4', myChart4);
 </script>
 
 </html>
+
+
 
 
 

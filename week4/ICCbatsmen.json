@@ -1,0 +1,32 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Men's Test Cricket - Official top 10 batsmen ",
+    "subtitle": "Test match batsmen rating- sourc: ICC",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week4/Battersweek4.csv"
+  },
+  "height": 300,
+  "width": 260,
+  "mark": {"type": "bar", "color": "#730606"},
+  "encoding": {
+    "x": {
+      "field": "Player",
+      "type": "ordinal",
+      "sort": "ascending",
+      "axis": {"title": null, "grid": false, "ticks": false, "labelAngle": 45}
+    },
+    "y": {
+      "field": "Rating",
+      "type": "quantitative",
+      "title": "",
+      "axis": {"grid": false}
+    }
+  },
+  "config": {}
+}

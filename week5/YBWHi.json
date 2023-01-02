@@ -1,0 +1,33 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week5/data_ONS-YBWH%20.json",
+    "format": {"type": "json", "property": "years"}
+  },
+  "title": {
+    "text": "Aged 16 and over",
+    "subtitle": "UK: Unemployed over 12 months:  Thousands: Source: ONS ",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 175,
+  "height": 175,
+  "mark": {"type": "line", "color": "chocolate"},
+  "encoding": {
+    "x": {
+      "field": "date",
+      "type": "temporal",
+      "axis": {"grid": false},
+      "title": "Year"
+    },
+    "y": {
+      "field": "value",
+      "type": "quantitative",
+      "axis": {"grid": false},
+      "title": null
+    }
+  },
+  "config": {}
+}

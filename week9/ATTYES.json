@@ -1,0 +1,43 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "Premier League Club's Summer Expenditure and Goals Scored",
+    "subtitle": [
+      "Summer Expenditure in millions (2021): (y), Goals scored (2021/22): (x)",
+      "The size of each point is calculated from the corresponding home attendance number."
+    ],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week9/NoCommaSCATTER.csv"
+  },
+  "mark": {"type": "circle", "color": "blue", "opacity": 0.3},
+  "height": 250,
+  "width": 250,
+  "encoding": {
+    "x": {
+      "field": "Goals",
+      "type": "quantitative",
+      "title": "Goals Scored",
+      "scale": {"domain": [20, 105]}
+    },
+    "y": {
+      "field": "Expenditure",
+      "type": "quantitative",
+      "title": "Expenditure (€m)"
+    },
+    "size": {"field": "Attendance", "type": "quantitative"},
+    "tooltip": [
+      {"field": "Club", "type": "ordinal", "title": "Club"},
+      {
+        "field": "Attendance",
+        "type": "quantitative",
+        "title": "Average Home Attendance"
+      }
+    ]
+  },
+  "config": {}
+}

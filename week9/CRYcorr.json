@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week9/WEEK9prices.csv"
+  },
+  "height": 250,
+  "width": 300,
+  "layer": [
+    {
+      "mark": {"type": "point", "filled": true, "color": "midnightblue"},
+      "encoding": {
+        "x": {
+          "field": "ETH",
+          "type": "quantitative",
+          "title": "ETH ($)",
+          "scale": {"domain": [0, 5000]}
+        },
+        "y": {
+          "field": "BTC",
+          "type": "quantitative",
+          "title": "BTC ($)",
+          "scale": {"domain": [0, 70000]}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "orange"},
+      "transform": [{"loess": "BTC", "on": "ETH"}],
+      "encoding": {
+        "x": {"field": "ETH", "type": "quantitative"},
+        "y": {"field": "BTC", "type": "quantitative"}
+      }
+    }
+  ],
+  "config": {}
+}

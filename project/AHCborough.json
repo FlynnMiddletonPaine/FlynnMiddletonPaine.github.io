@@ -1,0 +1,48 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "London Poverty Rate (AHC)",
+    "subtitle": ["by Borough"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "navy",
+    "scheme": {"color": ""}
+  },
+  "config": {"background": "white", "view": {"stroke": "transparent"}},
+  "width": 400,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/london_boroughs.json",
+    "format": {"property": "features"}
+  },
+  "projection": {"type": "mercator"},
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/project/knifecrime%23AHC.csv"
+        },
+        "key": "Borough",
+        "fields": ["Poverty_AHC"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "white", "strokeWidth": 0.1},
+  "encoding": {
+    "color": {
+      "scale": {"scheme": "Blues"},
+      "field": "Poverty_AHC",
+      "type": "quantitative"
+    },
+    "tooltip": [
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "London Borough"
+      },
+      {"field": "Poverty_AHC", "title": "2019 AHC Poverty rate: %"}
+    ]
+  }
+}

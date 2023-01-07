@@ -1,0 +1,44 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": " London 2021 Knife Crime",
+    "subtitle": "by borough",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 9,
+    "anchor": "middle",
+    "color": "black"
+  },
+  "config": {"background": "transparent", "view": {"stroke": "transparent"}},
+  "width": "container",
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/london_boroughs.json",
+    "format": {"property": "features"}
+  },
+  "projection": {"type": "mercator"},
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/knifecrime%23.csv"
+        },
+        "key": "Borough",
+        "fields": ["Crime"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "darkgrey", "strokeWidth": 1},
+  "encoding": {
+    "color": {
+      "field": "Crime",
+      "type": "quantitative",
+      "title": "Crimes",
+      "scale": {"scheme": "reds"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "title": "Borough"},
+      {"field": "Crime", "title": "2021 Knife Crime"}
+    ]
+  }
+}

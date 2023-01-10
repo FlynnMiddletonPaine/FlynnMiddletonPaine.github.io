@@ -1,0 +1,59 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "England: Knife Crime rate per 100,000 ",
+    "subtitle": ["by Region", "", ""],
+    "fontSize": 30,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "darkred"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/data/RegionKcrime.(AVE).csv"
+  },
+  "height": 300,
+  "width": 650,
+  "mark": "bar",
+  "encoding": {
+    "x": {"field": "Year", "type": "ordinal", "title": ""},
+    "y": {
+      "field": "Rate",
+      "type": "quantitative",
+      "title": "Knife Crime rate per 100,000"
+    },
+    "tooltip": [
+      {"field": "Rate", "type": "nominal", "title": "Knife Crime rate"},
+      {"field": "Region", "type": "ordinal", "title": "Region"}
+    ],
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "scale": {
+        "domain": [
+          "North East",
+          "North West",
+          "Yorkshire and the Humber",
+          "East Midlands",
+          "West Midlands",
+          "East of England",
+          "London",
+          "South East",
+          "South West"
+        ],
+        "range": [
+          "#DB0007",
+          "#034694",
+          "#00B2A9",
+          "purple",
+          "pink",
+          "orange",
+          "black",
+          "green",
+          "grey"
+        ]
+      },
+      "title": "Region"
+    }
+  },
+  "config": {"background": "#f6f6ee"}
+}

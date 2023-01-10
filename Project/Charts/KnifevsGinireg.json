@@ -1,0 +1,54 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/theFinalMergeKG.csv"
+  },
+  "layer": [
+    {
+      "height": 300,
+      "width": 500,
+      "mark": {"type": "circle", "filled": false},
+      "encoding": {
+        "x": {
+          "field": "Gini",
+          "type": "quantitative",
+          "scale": {"domain": [20, 80]}
+        },
+        "y": {
+          "field": "KnifeRate100k",
+          "type": "quantitative",
+          "scale": {"domain": [0, 18]}
+        },
+        "color": {
+          "field": "KnifeRate100k",
+          "type": "nominal",
+          "legend": null,
+          "scale": {"scheme": "darkred"}
+        }
+      }
+    },
+    {
+      "mark": {"type": "line", "color": "firebrick"},
+      "transform": [{"regression": "KnifeRate100k", "on": "Gini"}],
+      "encoding": {
+        "x": {"field": "Gini", "type": "quantitative"},
+        "y": {"field": "KnifeRate100k", "type": "quantitative"}
+      }
+    },
+    {
+      "transform": [
+        {"regression": "KnifeRate100k", "on": "Gini", "params": true},
+        {"calculate": "'R²: '+format(datum.rSquared, '.2f')", "as": "R2"}
+      ],
+      "mark": {
+        "type": "text",
+        "color": "firebrick",
+        "x": "width",
+        "align": "right",
+        "y": -5
+      },
+      "encoding": {"text": {"type": "nominal", "field": "R2"}}
+    }
+  ],
+  "config": {}
+}

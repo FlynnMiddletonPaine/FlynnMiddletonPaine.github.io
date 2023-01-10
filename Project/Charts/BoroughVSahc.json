@@ -2,15 +2,15 @@
   "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
   "description": "UK CPI data visualisation",
   "title": {
-    "text": "Knife crime Vs AHC",
-    "subtitle": ["", "", ""],
-    "subtitleFontStyle": "italic",
+    "text": "London: Knife crime Vs AHC",
+    "subtitle": ["by Borough", "R² = 0.28 ", ""],
+    "fontSize": 30,
     "subtitleFontSize": 10,
     "anchor": "start",
-    "color": "black"
+    "color": "darkred"
   },
   "data": {
-    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/project/knifecrime%23per100k.csv"
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/data/LON100k%3AAHC.csv"
   },
   "selection": {
     "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
@@ -22,13 +22,14 @@
     }
   },
   "height": 300,
-  "width": 300,
-  "mark": "circle",
+  "width": 650,
+  "mark": "square",
   "encoding": {
     "x": {
       "field": "Poverty_AHC",
       "type": "quantitative",
-      "title": "AHC poverty rate"
+      "title": "AHC poverty rate",
+      "scale": {"domain": [10, 46]}
     },
     "y": {
       "field": "Crime/",
@@ -39,6 +40,7 @@
       "field": "Region",
       "type": "ordinal",
       "title": null,
+      "legend": null,
       "scale": {"scheme": "turbo"}
     },
     "opacity": {
@@ -65,5 +67,5 @@
       }
     ]
   },
-  "config": {}
+  "config": {"background": "#f6f6ee"}
 }

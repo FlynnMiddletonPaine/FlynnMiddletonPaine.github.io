@@ -1,0 +1,35 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "England: Homocides by Weapon",
+    "subtitle": ["by Weapon"],
+    "fontSize": 30,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "darkred"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/data/FINALdeathstack.csv"
+  },
+  "width": 690,
+  "height": 225,
+  "mark": "square",
+  "encoding": {
+    "x": {"field": "Year", "type": "temporal", "title": null},
+    "y": {"field": "Deaths", "type": "quantitative", "title": "Homocides"},
+    "tooltip": [
+      {"field": "year", "type": "quantitative", "title": "Knife Crime rate"},
+      {"field": "Deaths", "type": "quantitative", "title": "Homocides"}
+    ],
+    "color": {
+      "field": "Type",
+      "type": "nominal",
+      "scale": {
+        "domain": ["Knife", "Shooting", "Poison or drugs", "Motor Vehicle"],
+        "range": ["darkred", "darkblue", "darkgreen", "orange"]
+      },
+      "title": "Weapon"
+    }
+  },
+  "config": {"background": "#f6f6ee"}
+}

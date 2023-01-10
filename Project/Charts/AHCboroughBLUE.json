@@ -7,9 +7,9 @@
     "subtitleFontSize": 10,
     "anchor": "middle",
     "color": "white"
+  
   },
   "config": {"background": "transparent", "view": {"stroke": "transparent"}},
-  "width": "container",
   "width": 400,
   "height": 300,
   "data": {
@@ -25,21 +25,25 @@
           "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/data/knifecrime%23per100k.csv"
         },
         "key": "Borough",
-        "fields": ["Crime/"]
+        "fields": ["Poverty_AHC"]
       }
     }
   ],
   "mark": {"type": "geoshape", "stroke": "darkgrey", "strokeWidth": 1},
   "encoding": {
     "color": {
-      "field": "Crime/",
+      "scale": {"scheme": "reds"},
+      "field": "Poverty_AHC",
       "type": "quantitative",
-      "title": "Crimes",
-      "scale": {"scheme": "reds"}
+      "title": "AHC Rate"
     },
     "tooltip": [
-      {"field": "properties.name", "title": "Borough"},
-      {"field": "Crime/", "title": "2021 Knife Crime"}
+      {
+        "field": "properties.name",
+        "type": "nominal",
+        "title": "London Borough"
+      },
+      {"field": "Poverty_AHC", "title": "2019 AHC Poverty rate: %"}
     ]
   }
 }

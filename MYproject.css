@@ -1,0 +1,75 @@
+
+
+body{
+    background: rgb(0, 0, 0);
+    
+    margin: auto;
+    text-align: center;
+    align-items: center;
+}
+/*Font style */
+h1, h3, p, a{
+    color:rgb(255, 245, 219);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;}
+
+/*Font sizing*/
+h1 {font-size: 40px;}
+h2 {font-size: 16px;}
+h3 {font-size: 25px;}
+h4 {font-size: 30px;}
+a{font-size: 16px;}
+p{margin-left: 200px;
+    margin-right: 200px;}
+
+/*keeping the same*/
+.Area{
+      font-family: 'Poppins', sans-serif;
+      margin: auto;
+      background-color: #888787;
+      border-width: 2px;
+      border-style: solid;
+      border-radius: 10px;
+      border-color: #4a0f0f;
+      max-width: 1100px;
+      margin: auto;
+      text-align: center;
+      align-items: center;}
+
+
+
+/* Formatting the buttons all the same colour and look*/
+#link1{
+    background-color: #ff28c6;
+
+    padding:20px;
+    
+    border:2px;
+    border-color:#ffffff;
+    border-style: solid;
+    border-radius: 10px;
+
+    font-family: 'Roboto', sans-serif;
+    font-weight:700;
+    color:#5d5d5d;
+    text-align: center;
+    text-decoration: none;
+    
+}
+#link1:hover {
+    background-color: transparent;
+    border-color: transparent;
+    
+}
+
+.chart {
+    width: auto;
+    margin: auto;
+   
+}
+
+
+
+
+
+

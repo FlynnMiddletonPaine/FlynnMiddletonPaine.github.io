@@ -1,0 +1,26 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "A simple bar chart with embedded data.",
+  "width": 490,
+  "height": 300,
+  "data": {
+    "values": [
+      {"Player": "Gareth Barry", "Stat": 652},
+      {"Player": "Ryan Giggs", "Stat": 632},
+      {"Player": "Frank Lampard", "Stat": 609},
+      {"Player": "James Milner", "Stat": 600},
+      {"Player": "David James", "Stat": 572},
+      {"Player": "Gary Speed", "Stat": 535},
+      {"Player": "Emile Heskey", "Stat": 516},
+      {"Player": "Mark Schwarzer", "Stat": 514},
+      {"Player": "Jamie Carragher", "Stat": 508},
+      {"Player": "Phil Neville", "Stat": 505}
+    ]
+  },
+  "mark": {"type": "bar", "color": "red"},
+  "encoding": {
+    "x": {"field": "Player", "type": "nominal", "axis": {"labelAngle": 20}},
+    "y": {"field": "Stat", "type": "quantitative", "sort": "-x"}
+  },
+  "config": {}
+}

@@ -1,0 +1,69 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "UK CPI data visualisation",
+  "title": {
+    "text": "London: Knife crime Vs AHC",
+    "subtitle": [
+      "by Borough",
+      "R² = 0.33 ",
+      "Source: tustforlondon.org.uk, Source: finder.co.uk"
+    ],
+    "fontSize": 30,
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "darkred"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/finalBoroughData(POPandREG).csv"
+  },
+  "selection": {
+    "paintbrush": {"type": "multi", "on": "mouseover", "nearest": true},
+    "grid": {"type": "interval", "bind": "scales"},
+    "divisionSelect": {
+      "type": "multi",
+      "fields": ["division_sh"],
+      "bind": "legend"
+    }
+  },
+  "height": 300,
+  "width": 650,
+  "mark": "square",
+  "encoding": {
+    "x": {
+      "field": "AHC",
+      "type": "quantitative",
+      "title": "AHC poverty rate",
+      "scale": {"domain": [14, 42]}
+    },
+    "y": {
+      "field": "KnifeCrime",
+      "type": "quantitative",
+      "title": "Knife Crime 2021"
+    },
+    "color": {
+      "field": "Region",
+      "type": "ordinal",
+      "title": "Region",
+      "legend": "Region",
+      "scale": {"scheme": "turbo"}
+    },
+    "opacity": {
+      "condition": {"selection": "divisionSelect", "value": 0.7},
+      "value": 0
+    },
+    "size": {
+      "value": 350,
+      "condition": {"selection": "paintbrush", "value": 1000}
+    },
+    "tooltip": [
+      {"field": "Borough", "type": "nominal", "title": "Borough"},
+      {
+        "field": "KnifeCrime",
+        "type": "quantitative",
+        "title": "2021 Knife Crimes /100,000"
+      },
+      {"field": "AHC", "type": "quantitative", "title": "AHC Poverty rate: %"}
+    ]
+  },
+  "config": {"background": "#f6f6ee"}
+}

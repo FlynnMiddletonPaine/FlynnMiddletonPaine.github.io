@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Top 15 World t20 Batsmen",
+  "title": {
+    "text": "Top 15 World t20 Batsmen",
+    "subtitle": "Source : icc-cricket.com",
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "start",
+    "color": "black"
+  },
+  "width": 490,
+  "height": 300,
+  "data": {
+    "values": [
+      {"Player": "Suryakumar Yadav", "Rating": 908},
+      {"Player": "Mohammad Rizwan", "Rating": 836},
+      {"Player": "Devon Conway", "Rating": 788},
+      {"Player": "Babar Azam", "Rating": 778},
+      {"Player": "Aiden Markram", "Rating": 748},
+      {"Player": "Dawid Malan", "Rating": 719},
+      {"Player": "Glenn Phillips", "Rating": 699},
+      {"Player": "Rilee Rossouw", "Rating": 693},
+      {"Player": "Aaron Finch", "Rating": 680},
+      {"Player": "Alex Hales", "Rating": 655},
+      {"Player": "Jos Buttler", "Rating": 652},
+      {"Player": "Pathum Nissanka", "Rating": 643},
+      {"Player": "Virat Kohli", "Rating": 631},
+      {"Player": "Muhammad Waseem", "Rating": 626},
+      {"Player": "Quinton de Kock", "Rating": 614},
+      {"Player": "Rahmanullah Gurbaz", "Rating": 598}
+    ]
+  },
+  "mark": {"type": "bar", "color": "darkred"},
+  "encoding": {
+    "x": {
+      "field": "Player",
+      "type": "nominal",
+      "axis": {"labelAngle": 20},
+      "sort": "-y"
+    },
+    "y": {"field": "Rating", "type": "quantitative", "sort": "-x"}
+  },
+  "config": {}
+}

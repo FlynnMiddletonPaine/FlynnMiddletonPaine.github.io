@@ -1,0 +1,148 @@
+/* Flynn Middleton-Paine; 1846555; Data Science*/
+
+
+
+
+/* Import a font */
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+
+/* Set the background color for my page: */
+body{
+    background-color: rgb(247, 181, 234);
+ }
+
+ /* Set the apperance of the class, chart */
+.chart{
+    width:auto;   
+}
+    
+
+/* Choose the appearance of the tags, h1, h3 and p: */
+h1, h3, p, a{
+    color:rgb(253, 253, 253);
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+}
+
+
+
+
+
+/* Set the apperance of the class, chart */
+
+
+
+#Chart1{width:499px}
+#Chart2{width:337px}
+#Chart3{width:342px}
+#Chart4{width:394px}
+
+
+
+/*My divisions */
+.myWeek1{
+        margin: auto;
+        max-width: 1000px;
+        background-color: rgb(193, 193, 193);
+        border-width: 2px;
+        border-style: solid;
+        border-radius: 2px;
+        border-color: rgb(255, 255, 255);
+      
+       
+        justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.myWeek2{
+        margin: auto;
+        max-width: 1000px;
+        background-color: rgb(54, 66, 157);
+    
+          
+       
+        justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+    
+}
+.myWeek3{
+        margin: auto;
+        max-width: 1000px;
+        background-color: rgb(193, 193, 193);
+       
+        justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+    
+}
+.myWeek4{
+        margin: auto;
+        max-width: 1000px;
+        background-color: rgb(54, 66, 157);
+        justify-content: center;
+        vertical-align: top;
+        align-items: center;
+        text-align: center;
+        
+}
+.myWeek5{
+    margin: auto;
+    max-width: 1000px;
+    background-color: rgb(189, 18, 18);
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+    
+}
+.myWeek7{
+    margin: auto;
+    max-width: 1000px;
+    background-color: rgb(255, 49, 145);
+    justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+
+}
+.myWeek8{
+    margin: auto;
+        max-width: 1000px;
+        background-color: rgb(84, 84, 84);
+        justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+    
+    
+}
+.myWeek9{
+
+    margin: auto;
+    max-width: 1000px;
+    background-color: rgb(159, 201, 227);
+
+  
+
+    justify-content: center;
+    vertical-align: top;
+    align-items: center;
+    text-align: center;
+}
+
+#Chart1{width:499px}
+#Chart2{width:337px}
+#Chart3{width:342px}
+#Chart4{width:394px}
+#Chart22{width:400px}
+
+
+
+
+

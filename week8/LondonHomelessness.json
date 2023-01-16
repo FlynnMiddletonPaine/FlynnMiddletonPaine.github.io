@@ -1,0 +1,17 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "description": "Stock prices of 5 Tech Companies over Time.",
+  "title": {
+    "text": "Number of homeless people in London",
+    "subtitle": "source: Statista"
+  },
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week8/LondonHomeless2.csv"
+  },
+  "mark": {"type": "line", "point": true},
+  "encoding": {
+    "x": {"field": "Year", "title": null},
+    "y": {"field": "Number", "type": "quantitative"}
+  },
+  "config": {}
+}

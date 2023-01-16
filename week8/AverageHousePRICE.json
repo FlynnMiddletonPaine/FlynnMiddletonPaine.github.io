@@ -1,0 +1,25 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": { "text":"Average house price over time",
+  "subtitle":" Source: ONS"},
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/week8/housePRICESstack2.csv"
+  },
+  "width": 250,
+  "height": 200,
+  "mark": "line",
+  "encoding": {
+    "x": {"field": "Date", "type": "ordinal", "title": null, "scale": "domain"},
+    "y": {"field": "Price", "type": "quantitative", "title": "Price"},
+    "color": {
+      "field": "Region",
+      "type": "nominal",
+      "scale": {
+        "domain": ["London", "South East"],
+        "range": ["#DB0007", "#034694", "#00B2A9"]
+      },
+      "title": "Region"
+    }
+  },
+  "config": {}
+}

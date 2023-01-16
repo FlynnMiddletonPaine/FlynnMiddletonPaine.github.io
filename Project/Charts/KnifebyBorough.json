@@ -1,0 +1,45 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "title": {
+    "text": "London Knife Crimes 2021",
+    "subtitle": ["by Borough", "Source: trustforlondon.org.uk", "Source: finder.co.uk"],
+    "subtitleFontStyle": "italic",
+    "subtitleFontSize": 10,
+    "anchor": "middle",
+    "color": "white"
+  },
+  "config": {"background": "transparent", "view": {"stroke": "transparent"}},
+  "width": "container",
+  "width": 400,
+  "height": 300,
+  "data": {
+    "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/london_boroughs.json",
+    "format": {"property": "features"}
+  },
+  "projection": {"type": "mercator"},
+  "transform": [
+    {
+      "lookup": "properties.name",
+      "from": {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FlynnMiddletonPaine/FlynnMiddletonPaine.github.io/main/Project/finalBoroughData(POPandREG).csv"
+        },
+        "key": "Borough",
+        "fields": ["KnifeCrime"]
+      }
+    }
+  ],
+  "mark": {"type": "geoshape", "stroke": "darkgrey", "strokeWidth": 1},
+  "encoding": {
+    "color": {
+      "field": "KnifeCrime",
+      "type": "quantitative",
+      "title": "Crimes",
+      "scale": {"scheme": "reds"}
+    },
+    "tooltip": [
+      {"field": "properties.name", "title": "Borough"},
+      {"field": "KnifeCrime", "title": "2021 Knife Crime offences (per 100,000)"}
+    ]
+  }
+}
